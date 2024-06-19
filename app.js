@@ -1,25 +1,25 @@
-/*----- constants -----*/
+/*====================================================== constants ========================================================*/
 const COLORS = {
     '0': 'white',
     '1': 'purple',
     '-1': 'orange'
   };
   
-  /*----- state variables -----*/
+  /*=================================================== state variables ====================================================*/
   let turn; // this will 1 or -1
   let board; // this will be a 2d array of 7 arrays with six values
   let winner; // this will be set to null, 1, -1 or 'T'
   
-  /*----- cached elements  -----*/
+  /*============================================ cached elements ============================================================*/
   const messageEl = document.querySelector('h1');
   const playAgainBtn = document.querySelector('button');
   const markerEls = [...document.querySelectorAll('#markers > div')];
-  /*----- event listeners -----*/
+  /*============================================event listeners ===========================================================*/
   document.querySelector('#markers').addEventListener('click', handleDrop);
   
   playAgainBtn.addEventListener('click', init);
   
-  /*----- functions -----*/
+  /*=============================================functions ===================================================================*/
   init();
   
   function init() {
@@ -104,7 +104,7 @@ const COLORS = {
       board[colIdx][rowIdx] !== undefined &&
       board[colIdx][rowIdx] === player
     ) {
-      // while counting:
+      // During counting:
       // make sure we stay within the bounds of the game board
       // make sure the current disk we're checking is for the same player
     // count
@@ -116,8 +116,6 @@ const COLORS = {
   // return the count
   return count;
 }
-
-
 
 // this function transfers the state of our application to the DOM
 function render() {
